@@ -13,7 +13,11 @@ export async function main(event, context) {
   try {
     const result = await dynamoDbLib.call("get", params);
     if (result.Item) {
-      return success(result.Item);
+      const newItem = {
+        user_id: result.Item.user_id,
+        reward_id: result.Item.reward_id,
+      };
+      return success(newItem);
     } else {
       return failure({ status: false, error: "Item not found." });
     }
