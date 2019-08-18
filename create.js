@@ -16,6 +16,7 @@ export async function main(event, context) {
       type: data.redemption_type,
       flash_sale_begin: data.flash_sale_begin,
       flash_sale_end: data.flash_sale_end,
+      is_redeemed: false,
       createdAt: Date.now()
     }
   };

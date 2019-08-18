@@ -1,0 +1,11 @@
+{
+  "body": "{\"is_redeemed\":\"true\"}",
+  "pathParameters": {
+    "id": "db30fc20-c1b6-11e9-ab36-9d07651fe5b8"
+  },
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "TEST-12345678"
+    }
+  }
+}
