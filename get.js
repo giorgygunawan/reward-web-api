@@ -5,7 +5,6 @@ export async function main(event, context) {
   const params = {
     TableName: "rewards",
     Key: {
-      user_id: event.requestContext.identity.cognitoIdentityId,
       reward_id: event.pathParameters.id
     }
   };
@@ -13,11 +12,7 @@ export async function main(event, context) {
   try {
     const result = await dynamoDbLib.call("get", params);
     if (result.Item) {
-      const newItem = {
-        user_id: result.Item.user_id,
-        reward_id: result.Item.reward_id,
-      };
-      return success(newItem);
+      return success(result.Item);
     } else {
       return failure({ status: false, error: "Item not found." });
     }

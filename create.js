@@ -7,16 +7,16 @@ export async function main(event, context) {
   const params = {
     TableName: "rewards",
     Item: {
-      user_id: event.requestContext.identity.cognitoIdentityId,
       reward_id: uuid.v1(),
       image: data.image,
       title: data.title,
       vendor_name: data.vendor.vendor_name,
       vendor_image: data.vendor.vendor_image,
+      user_type: data.user_type,
       type: data.redemption_type,
       flash_sale_begin: data.flash_sale_begin,
       flash_sale_end: data.flash_sale_end,
-      is_redeemed: false,
+      redemption_history: {},
       createdAt: Date.now()
     }
   };

@@ -1,5 +1,6 @@
 {
-  "reward": {
+  "rewards": [{
+    "reward_id": "reward_id"
     "image": "https://picsum.photos/500/300",
     "title": "Subdue had female winged hath, seed night moveth. Replenish winged.",
     "vendor": {
@@ -9,6 +10,18 @@
     "redemption_type": "redeem online",
     "flash_sale_begin": "1565944466",
     "flash_sale_end": "1565948066",
-    "redeemed_by": [""] <-- ini gimana ya enaknya ngecek udah di redeem apa belum sama kayak favorites di style kita
+    "redemption_history": {
+      "TEST-12345678" : ["1565944466", "1565948066"],
+      "TEST-123456" : ["1565944466"]
+
     }
+  }],
+  "user_rewards": [{
+    "user_id": "TEST-12345678",
+    "redeemed_rewards": [{
+      "reward_id": "1",
+      "redeemed_at": "123123",
+      "reward_title": "kucing terbang"
+      }]
+    }]
 }

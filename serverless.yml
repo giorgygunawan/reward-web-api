@@ -41,15 +41,13 @@ functions:
           path: rewards/{id}
           method: get
           cors: true
-          authorizer: aws_iam
   list:
-    handler: api/get-list.main
+    handler: get-list.main
     events:
       - http:
           path: rewards
           method: get
           cors: true
-          authorizer: aws_iam
   update:
     handler: update.main
     events:
