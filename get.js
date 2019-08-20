@@ -3,7 +3,7 @@ import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context) {
   const params = {
-    TableName: "rewards",
+    TableName: process.env.tableName,
     Key: {
       reward_id: event.pathParameters.id
     }
