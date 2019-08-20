@@ -8,13 +8,13 @@
       "vendor_image": "https://picsum.photos/90/90"
     },
     "redemption_type": "redeem online",
-    "flash_sale_begin": "1565944466",
-    "flash_sale_end": "1565948066",
+    "flash_sale_date": "1565944466",
     "redemption_history": {
       "TEST-12345678" : ["1565944466", "1565948066"],
       "TEST-123456" : ["1565944466"]
-
-    }
+    },
+    "created_at": "1565944466",
+    "expiry_date": "1565944466"
   }],
   "user_rewards": [{
     "user_id": "TEST-12345678",

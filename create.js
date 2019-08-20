@@ -12,12 +12,11 @@ export async function main(event, context) {
       title: data.title,
       vendor_name: data.vendor.vendor_name,
       vendor_image: data.vendor.vendor_image,
-      user_type: data.user_type,
-      type: data.redemption_type,
-      flash_sale_begin: data.flash_sale_begin,
-      flash_sale_end: data.flash_sale_end,
+      redemption_type: data.redemption_type,
+      flash_sale_date: data.flash_sale_date,
+      expiry_date: data.expiry_date,
       redemption_history: {},
-      createdAt: Date.now()
+      created_at: Date.now()
     }
   };
   try {
