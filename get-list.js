@@ -10,6 +10,6 @@ export async function main(event, context) {
     const result = await dynamoDbLib.call("scan", params);
     return success(result.Items);
   } catch (e) {
-    return failure({ status: false, error: e.toString() });
+    return failure({ status: false, error: e.message });
   }
 }

@@ -1,6 +1,7 @@
 Resources:
   RewardsTable:
     Type: AWS::DynamoDB::Table
+    DeletionPolicy: Retain
     Properties:
       TableName: ${self:custom.tableName}
       AttributeDefinitions:

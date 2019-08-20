@@ -1,4 +1,4 @@
-service: notes-app-api
+service: rewards-app-api
 
 package:
   individually: true
@@ -17,7 +17,7 @@ custom:
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: prod
+  stage: dev
   region: us-east-1
 
   # These environment variables are made available to our functions
@@ -38,7 +38,7 @@ provider:
       # Restrict our IAM role permissions to
       # the specific table for the stage
       Resource:
-        - "Fn::GetAtt": [ NotesTable, Arn ]
+        - "Fn::GetAtt": [ RewardsTable, Arn ]
 
 
 functions:
@@ -88,3 +88,6 @@ resources:
   - ${file(resources/dynamodb-table.yml)}
   # Cognito
   - ${file(resources/cognito-user-pool.yml)}
+  - ${file(resources/cognito-identity-pool.yml)}
+    # S3
+  - ${file(resources/s3-bucket.yml)}

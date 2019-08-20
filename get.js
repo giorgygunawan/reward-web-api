@@ -14,9 +14,9 @@ export async function main(event, context) {
     if (result.Item) {
       return success(result.Item);
     } else {
-      return failure({ status: false, error: "Item not found." });
+      return failure({ status: false, error: "item not found" });
     }
   } catch (e) {
-    return failure({ status: false });
+    return failure({ status: false, error: e.message });
   }
 }
