@@ -57,6 +57,7 @@ functions:
           path: rewards/{reward_id}/{created_at}
           method: get
           cors: true
+          authorizer: aws_iam
   list:
     handler: get-list.main
     events:
