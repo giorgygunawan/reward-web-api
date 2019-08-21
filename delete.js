@@ -5,7 +5,8 @@ export async function main(event, context) {
   const params = {
     TableName: process.env.tableName,
     Key: {
-      reward_id: event.pathParameters.id
+      reward_id: event.pathParameters.reward_id,
+      created_at: parseInt(event.pathParameters.created_at,10)
     }
   };
 
@@ -13,6 +14,7 @@ export async function main(event, context) {
     await dynamoDbLib.call("delete", params);
     return success({ status: true });
   } catch (e) {
+    console.log(e);
     return failure({ status: false, error: e.message });
   }
 }

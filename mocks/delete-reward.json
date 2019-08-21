@@ -1,10 +1,6 @@
 {
   "pathParameters": {
-    "id": "db30fc20-c1b6-11e9-ab36-9d07651fe5b8"
-  },
-  "requestContext": {
-    "identity": {
-      "cognitoIdentityId": "TEST-12345678"
-    }
+    "reward_id": "d238c780-c3ee-11e9-998f-57dfa75fa7e0",
+    "created_at": 1566376610808
   }
 }

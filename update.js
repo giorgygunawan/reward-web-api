@@ -5,7 +5,8 @@ export async function main(event, context) {
   const params = {
     TableName: process.env.tableName,
     Key: {
-      reward_id: event.pathParameters.id
+      reward_id: event.pathParameters.reward_id,
+      created_at: parseInt(event.pathParameters.created_at,10)
     },
     UpdateExpression: "SET #redemption_history.#user_id = list_append(if_not_exists(#redemption_history.#user_id, :empty_list), :current_time)",
     ExpressionAttributeNames: {
@@ -23,6 +24,7 @@ export async function main(event, context) {
     await dynamoDbLib.call("update", params);
     return success({ status: true });
   } catch (e) {
+    console.log(e);
     return failure({ status: false, error: e.message });
   }
 }

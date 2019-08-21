@@ -5,18 +5,23 @@ export async function main(event, context) {
   const params = {
     TableName: process.env.tableName,
     Key: {
-      reward_id: event.pathParameters.id
+      reward_id: event.pathParameters.reward_id,
+      created_at: parseInt(event.pathParameters.created_at,10)
     }
   };
-
+  const userId = event.requestContext ? (event.requestContext.identity ? event.requestContext.identity.cognitoIdentityId : null) : null;
   try {
     const result = await dynamoDbLib.call("get", params);
     if (result.Item) {
-      return success(result.Item);
+      const modifiedItem = result.Item;
+      modifiedItem.is_redeemed = result['Item']['redemption_history'][userId] != null;
+      delete modifiedItem.redemption_history;
+      return success(modifiedItem);
     } else {
       return failure({ status: false, error: "item not found" });
     }
   } catch (e) {
+    console.log(e);
     return failure({ status: false, error: e.message });
   }
 }

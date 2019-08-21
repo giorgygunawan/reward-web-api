@@ -54,7 +54,7 @@ functions:
     handler: get.main
     events:
       - http:
-          path: rewards/{id}
+          path: rewards/{reward_id}/{created_at}
           method: get
           cors: true
   list:
@@ -68,7 +68,7 @@ functions:
     handler: update.main
     events:
       - http:
-          path: rewards/{id}
+          path: rewards/{reward_id}/{created_at}
           method: put
           cors: true
           authorizer: aws_iam
@@ -76,7 +76,7 @@ functions:
     handler: delete.main
     events:
       - http:
-          path: rewards/{id}
+          path: rewards/{reward_id}/{created_at}
           method: delete
           cors: true
           authorizer: aws_iam

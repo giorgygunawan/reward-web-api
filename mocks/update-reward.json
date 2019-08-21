@@ -1,6 +1,7 @@
 {
   "pathParameters": {
-    "id": "2eaf63c0-c296-11e9-a31c-d338de23d016"
+    "reward_id": "d441b180-c3db-11e9-b254-070d014d81f7",
+    "created_at": 1566368453784
   },
   "requestContext": {
     "identity": {
