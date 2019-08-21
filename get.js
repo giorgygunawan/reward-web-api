@@ -13,8 +13,12 @@ export async function main(event, context) {
   try {
     const result = await dynamoDbLib.call("get", params);
     if (result.Item) {
-      const modifiedItem = result.Item;
+      const modifiedItem = {...result.Item};
       modifiedItem.is_redeemed = result['Item']['redemption_history'][userId] != null;
+      if (modifiedItem.is_redeemed) {
+        const redemptionHistories = result['Item']['redemption_history'][userId];
+        modifiedItem.redemption_expired_time = redemptionHistories[redemptionHistories.length - 1] + (3600 * 1000);
+      }
       delete modifiedItem.redemption_history;
       return success(modifiedItem);
     } else {
