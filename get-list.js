@@ -3,7 +3,8 @@ import { success, failure } from "./libs/response-lib";
 
 export async function main(event, context) {
   const params = {
-    TableName: process.env.tableName
+    TableName: process.env.tableName,
+    ProjectionExpression: "reward_id,image,title,vendor_name,vendor_image,redemption_type,flash_sale_date,expiry_date,created_at"
   };
 
   try {
