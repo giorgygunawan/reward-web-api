@@ -18,6 +18,9 @@ export async function main(event, context) {
       if (modifiedItem.is_redeemed) {
         const redemptionHistories = result['Item']['redemption_history'][userId];
         modifiedItem.redemption_expired_time = redemptionHistories[redemptionHistories.length - 1] + (3600 * 1000);
+      } else {
+        delete modifiedItem.reward_qr;
+        delete modifiedItem.reward_code;
       }
       delete modifiedItem.redemption_history;
       return success(modifiedItem);
