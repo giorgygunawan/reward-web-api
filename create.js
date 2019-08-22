@@ -8,6 +8,8 @@ export async function main(event, context) {
     TableName: process.env.tableName,
     Item: {
       reward_id: uuid.v1(),
+      reward_code: data.reward_code,
+      reward_qr: data.reward_qr,
       image: data.image,
       title: data.title,
       subtitle: data.subtitle,
