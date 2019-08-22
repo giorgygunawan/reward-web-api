@@ -13,10 +13,10 @@ export async function main(event, context) {
       image: data.image,
       title: data.title,
       subtitle: data.subtitle,
-      vendor_name: data.vendor.vendor_name,
-      vendor_image: data.vendor.vendor_image,
-      vendor_website: data.vendor.vendor_website,
-      vendor_location: data.vendor.vendor_location,
+      vendor_name: data.vendor_name,
+      vendor_image: data.vendor_image,
+      vendor_website: data.vendor_website,
+      vendor_location: data.vendor_location,
       redemption_type: data.redemption_type,
       redemption_period: data.redemption_period,
       faqs: data.faqs,
@@ -30,6 +30,7 @@ export async function main(event, context) {
     await dynamoDbLib.call("put", params);
     return success(params.Item);
   } catch (e) {
+    console.log(e);
     return failure({ status: false, error: e.message});
   }
 }
