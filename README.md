@@ -33,8 +33,8 @@ Get a reward item from rewards table
 `POST rewards/`
 Create a reward item based on parameters
 `side effect` :
-* add `reward_id` generated from UUID.v1()
-* add `created_at` generated from Date.now()
+* add `reward_id` generated from `UUID.v1()`
+* add `created_at` generated from `Date.now()`
 
 
 ### UPDATE REWARD *name should be REDEEM REWARD
@@ -42,11 +42,15 @@ Create a reward item based on parameters
 Redeem a reward
 
 `side effect` :
-* hides `reward_code` and `reward_qr` when reward is not redeemed
-* if user has redeemed the reward, `is_redeemed` and `redemption_expired_time` is created based on `redemption_history`
-* always hides `redemption_history` 
+* add `{user_id}` with value `Date.now()` in redemption_history
 
+### DELETE REWARD
+`DELETE rewards/{reward_id}/{created_at}`
+delete a reward
 
+### GET LIST OF REWARDS
+`GET rewards/`
+get list of all rewards
 
 ### Usage
 
@@ -81,5 +85,9 @@ Run your tests using
 ``` bash
 $ npm test
 ```
+
+### Further Development
+*  Paginate request for get-list so that the result is not the whole table
+*  Add more unit test and add more integration test
 
 
