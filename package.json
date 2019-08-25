@@ -14,13 +14,11 @@
   },
   "devDependencies": {
     "aws-sdk": "^2.512.0",
+    "jest": "^24.9.0",
     "serverless-bundle": "^1.2.2",
     "serverless-offline": "^5.3.3"
   },
   "dependencies": {
     "uuid": "^3.3.2"
-  },
-  "scripts": {
-    "test": "serverless-bundle test"
   }
 }

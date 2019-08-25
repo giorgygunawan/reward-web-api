@@ -1,0 +1,11 @@
+{
+  "pathParameters": {
+    "reward_id": "cf07a670-c3db-11e9-8ee1-4d9419018a6x",
+    "created_at": 1566368445018
+  },
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "us-east-1:c8c984bf-4939-4210-a75d-edd0b85e2fa1"
+    }
+  }
+}
